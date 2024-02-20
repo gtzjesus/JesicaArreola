@@ -10,7 +10,6 @@
 // This section has all necessary imports for this component.
 
 import styled from 'styled-components';
-import { useNavigate } from 'react-router';
 import { useState } from 'react';
 
 // ------------------------------
@@ -89,15 +88,8 @@ const MenuItem = styled.a`
 // This section has our React Component which handles the hook data
 
 function Navigation() {
-  // Grab react hook to navigate the router
-  const navigate = useNavigate();
   // Check to see if menu is open/close
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Handles the navigation to home page
-  function handleHome() {
-    navigate('/');
-  }
 
   // Handle toggle for button menu
   function toggleMenu() {
@@ -108,7 +100,7 @@ function Navigation() {
       {/* <!-- Nav Container , the header --> */}
       <StyledNav>
         {/* <!--  Container for logo and title --> */}
-        <Logo onClick={handleHome}></Logo>
+        <Logo></Logo>
         {/* <!-- Menu Container for links --> */}
         <Menu onClick={toggleMenu}> {isMenuOpen ? 'Exit' : 'Menu'}</Menu>
       </StyledNav>
