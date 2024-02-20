@@ -1,5 +1,11 @@
+import Navigation from '../../navigation/Navigation';
+
 function Home() {
-  return <div>world ehllo</div>;
+  return (
+    <>
+      <Navigation />
+    </>
+  );
 }
 
 export default Home;
