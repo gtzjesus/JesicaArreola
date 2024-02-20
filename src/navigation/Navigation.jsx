@@ -11,6 +11,7 @@
 
 import styled from 'styled-components';
 import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
 // ------------------------------
 // Styled Componenets
@@ -39,7 +40,7 @@ const Logo = styled.span`
   height: var(--logo-height);
 `;
 
-const Menu = styled.a`
+const Menu = styled.button`
   // Code logic for contact link a element
   display: inline-block;
   padding: 8px 16px;
@@ -51,6 +52,37 @@ const Menu = styled.a`
   margin: 0 var(--padding-xsmall);
 `;
 
+const MenuContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+`;
+
+const MenuContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+`;
+
+const MenuItem = styled.a`
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 8px;
+`;
+
 // ------------------------------
 // Component
 // ------------------------------
@@ -59,10 +91,17 @@ const Menu = styled.a`
 function Navigation() {
   // Grab react hook to navigate the router
   const navigate = useNavigate();
+  // Check to see if menu is open/close
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Handles the navigation to home page
   function handleHome() {
     navigate('/');
+  }
+
+  // Handle toggle for button menu
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
     <>
@@ -71,8 +110,15 @@ function Navigation() {
         {/* <!--  Container for logo and title --> */}
         <Logo onClick={handleHome}></Logo>
         {/* <!-- Menu Container for links --> */}
-        <Menu>Menu</Menu>
+        <Menu onClick={toggleMenu}> {isMenuOpen ? 'Exit' : 'Menu'}</Menu>
       </StyledNav>
+      <MenuContainer isOpen={isMenuOpen}>
+        <MenuContent>
+          <MenuItem href="#">Contact</MenuItem>
+
+          {/* Add more menu items as needed */}
+        </MenuContent>
+      </MenuContainer>
     </>
   );
 }
