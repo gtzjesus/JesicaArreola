@@ -17,12 +17,12 @@ import styled from 'styled-components';
 const StyledAbout = styled.div`
   padding: 0 var(--padding-small);
   display: flex; /* Use flexbox to align items */
-  height: 25vh;
+  height: 50vh;
 `;
 
 const Me = styled.div`
   flex: 1.5; /* Take up remaining space */
-  font-size: var(--font-large);
+  font-size: var(--font-medium);
 `;
 
 const VerticalLine = styled.div`
