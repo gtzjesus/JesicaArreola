@@ -51,6 +51,12 @@ const ContentDescription = styled.span`
 const VerticalLine = styled.div`
   border-left: 1px solid var(--color-black); /* Adjust thickness and color as needed */
   height: auto; /* Set height to auto to match content height */
+  margin: 15px; /* Adjust spacing as needed */
+`;
+
+const VerticalLineInvisible = styled.div`
+  border-left: 1px solid var(--color-tan); /* Adjust thickness and color as needed */
+  height: auto; /* Set height to auto to match content height */
   margin: 20px; /* Adjust spacing as needed */
 `;
 
@@ -71,7 +77,9 @@ function Work() {
         <VerticalLine />
         <Section>
           <Content>
-            <ContentTitle>Property Valuation</ContentTitle>
+            <ContentTitle>
+              Property <br /> Valuation
+            </ContentTitle>
             <br />
             <br />
 
@@ -84,13 +92,53 @@ function Work() {
         <VerticalLine />
         <Section>
           <Content>
-            <ContentTitle>Market Analysis</ContentTitle>
+            <ContentTitle>
+              Market <br /> Analysis
+            </ContentTitle>
             <br />
             <br />
 
             <ContentDescription>
               Assist clients in market dynamics, predict future trends, and make
               strategic investment decisions.
+            </ContentDescription>
+          </Content>
+        </Section>
+      </StyledWork>
+      <hr />
+      <StyledWork>
+        <Section>
+          <Title></Title>
+        </Section>
+
+        <VerticalLineInvisible />
+        <Section>
+          <Content>
+            <ContentTitle>
+              Negotiation
+              <br /> Expertise
+            </ContentTitle>
+            <br />
+            <br />
+
+            <ContentDescription>
+              Negotiate on behalf of clients with price, terms of sale,
+              contingencies, and contract details.
+            </ContentDescription>
+          </Content>
+        </Section>
+        <VerticalLine />
+        <Section>
+          <Content>
+            <ContentTitle>
+              Property <br /> Marketing
+            </ContentTitle>
+            <br />
+            <br />
+
+            <ContentDescription>
+              Develop and implement effective marketing strategies to showcase
+              properties to potential buyers.
             </ContentDescription>
           </Content>
         </Section>
