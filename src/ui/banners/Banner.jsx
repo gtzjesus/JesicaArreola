@@ -25,12 +25,11 @@ const moveText = keyframes`
 
 // Styled components for the text container and text elements
 const TextContainer = styled.div`
-  background-color: pink; /* Apply background color directly to the text container */
   width: fit-content;
   overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
   display: flex;
   white-space: nowrap;
-  animation: ${moveText} 10s linear infinite; /* Apply animation */
+  animation: ${moveText} 15s linear infinite; /* Apply animation */
 `;
 
 const Text = styled.div`
