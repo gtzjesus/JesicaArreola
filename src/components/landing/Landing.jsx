@@ -72,7 +72,7 @@ function Landing() {
       <Scroll>
         <SubTitle>(Texas, United States)</SubTitle>
         <Hint>
-          Scroll Down<Icon src="/icons/downarrow.png"></Icon>
+          <Icon src="/icons/downarrow.png"></Icon>Scroll Down
         </Hint>
       </Scroll>
       <Realtor></Realtor>
