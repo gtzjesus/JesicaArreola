@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 * {
   font-family: 'Playfair Display', serif;
   margin: 0;
@@ -9,6 +10,7 @@
   overflow-x: hidden;
 }
 
+/* Creating Horizontal line (fullscreen) */
 hr {
   display: block;
   height: 6px;
@@ -17,8 +19,12 @@ hr {
   margin: 20px; /* Adjust spacing as needed */
   padding: 0;
 }
+
+/* Creating Horizontal line (half-screen) */
+
 .hr-half-screen {
   display: flex;
+  padding-right: var(--padding-small);
 }
 
 .hr-half-screen::before {

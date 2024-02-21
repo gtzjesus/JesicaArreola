@@ -52,6 +52,7 @@ const ContentTitle = styled.span``;
 
 const ContentDescription = styled.span`
   font-size: var(--font-tiny);
+  opacity: 0.7;
 `;
 
 const VerticalLine = styled.div`
