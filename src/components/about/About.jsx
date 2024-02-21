@@ -35,7 +35,7 @@ const More = styled.div`
   align-self: flex-end; /* Align to the bottom of the flex container */
 `;
 
-const Test = styled.div``;
+const Title = styled.div``;
 
 const Link = styled.a`
   position: relative;
@@ -62,7 +62,7 @@ function About() {
         lifestyle.
       </Me>
       <VerticalLine />
-      <Test> About me</Test>
+      <Title> About me</Title>
       <More>
         <br />
         <Link target="_blank" href="https://www.instagram.com/jesicaarlette/">
