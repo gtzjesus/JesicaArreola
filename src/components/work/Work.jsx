@@ -84,7 +84,7 @@ function Work() {
         <VerticalLine />
         <Section>
           <Content>
-            <ContentTitle>Analysis</ContentTitle>
+            <ContentTitle>Market Analysis</ContentTitle>
             <br />
             <br />
 
