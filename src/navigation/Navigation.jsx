@@ -31,12 +31,17 @@ const StyledNav = styled.nav`
   font-size: var(--font-xxxsmall);
 `;
 
-const Logo = styled.span`
-  // Code logic to arrange children
-  padding: 0 0 0 var(--padding-small);
+const Object = styled.div`
+  padding: 0 var(--padding-small);
+`;
 
-  // Code logic to modify logo
-  height: var(--logo-height);
+const Logo = styled.img`
+  height: var(--font-small);
+  padding-left: var(--padding-xxsmall);
+  color: white;
+  @media (min-width: 61.25em) {
+    padding: 0 var(--padding-medium) 0 0;
+  }
 `;
 
 const Menu = styled.button`
@@ -48,7 +53,6 @@ const Menu = styled.button`
   border-radius: 20px; /* Adjust the value to control the roundness of the button */
   text-align: center;
   text-decoration: none;
-  margin: 0 var(--padding-xsmall);
 `;
 
 const MenuContainer = styled.div`
@@ -82,6 +86,8 @@ const MenuItem = styled.a`
   margin: 8px;
 `;
 
+const Link = styled.a``;
+
 // ------------------------------
 // Component
 // ------------------------------
@@ -99,10 +105,19 @@ function Navigation() {
     <>
       {/* <!-- Nav Container , the header --> */}
       <StyledNav>
-        {/* <!--  Container for logo and title --> */}
-        <Logo></Logo>
-        {/* <!-- Menu Container for links --> */}
-        <Menu onClick={toggleMenu}> {isMenuOpen ? 'Exit' : 'Menu'}</Menu>
+        <Object>
+          <Link target="_blank" href="https://www.instagram.com/jesicaarlette/">
+            {/* <!--  Container for logo and title --> */}
+            <Logo src="/icons/instagram.png" alt="instagram"></Logo>
+          </Link>
+          <Link target="_blank" href="https://www.facebook.com/iarlette">
+            <Logo src="/icons/facebook.png" alt="facebook"></Logo>
+          </Link>
+        </Object>
+        <Object>
+          {/* <!-- Menu Container for links --> */}
+          <Menu onClick={toggleMenu}> {isMenuOpen ? 'Exit' : 'Menu'}</Menu>
+        </Object>
       </StyledNav>
       <MenuContainer isOpen={isMenuOpen}>
         <MenuContent>
