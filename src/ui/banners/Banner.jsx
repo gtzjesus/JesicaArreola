@@ -8,14 +8,12 @@
 // Imports
 // ------------------------------
 // This section has all necessary imports for this component.
-import React, { useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 // ------------------------------
 // Styled Componenets
 // ------------------------------
 // This section has all CSS styles configured for every HTML element.
-// Define keyframes for the moving animation
 const moveText = keyframes`
   0% {
     transform: translateX(100%);
@@ -25,18 +23,19 @@ const moveText = keyframes`
   }
 `;
 
-// Styled components for the banner and text elements
-const StyledBanner = styled.div``;
-
+// Styled components for the text container and text elements
 const TextContainer = styled.div`
+  background-color: pink; /* Apply background color directly to the text container */
+  width: fit-content;
+  overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
   display: flex;
-
-  animation: ${moveText} ${(props) => props.animationDuration}s linear infinite; /* Apply animation */
+  white-space: nowrap;
+  animation: ${moveText} 10s linear infinite; /* Apply animation */
 `;
 
 const Text = styled.div`
   font-size: var(--font-xxlarge);
-  padding-right: 15rem;
+  padding-right: 100px; /* Adjust spacing between texts */
 `;
 
 // ------------------------------
@@ -44,28 +43,14 @@ const Text = styled.div`
 // ------------------------------
 // This section has our React Component which handles the hook data
 function Banner() {
-  const textContainerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = React.useState(0);
-
-  useEffect(() => {
-    if (textContainerRef.current) {
-      setContainerWidth(textContainerRef.current.offsetWidth);
-    }
-  }, []);
   return (
-    <StyledBanner>
-      <TextContainer
-        ref={textContainerRef}
-        containerWidth={containerWidth}
-        animationDuration={containerWidth / 100}
-      >
-        <Text>Houses</Text>
-        <Text>Houses</Text>
-        <Text>Houses</Text>
-        <Text>Houses</Text>
-        <Text>Houses</Text>
-      </TextContainer>
-    </StyledBanner>
+    <TextContainer>
+      <Text>Houses</Text>
+      <Text>Houses</Text>
+      <Text>Houses</Text>
+      <Text>Houses</Text>
+      <Text>Houses</Text>
+    </TextContainer>
   );
 }
 
