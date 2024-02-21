@@ -24,7 +24,7 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   // Code logic for positioning fixed in all web app + header config
   position: fixed;
-  background: transparent;
+  background: var(--color-tan);
   width: var(--width-full-window);
   z-index: var(--z-top);
   height: var(--height-navigation);
