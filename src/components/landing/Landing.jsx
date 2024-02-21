@@ -69,6 +69,7 @@ function Landing() {
     <StyledLanding>
       <Title>Jesica Arreola</Title>
       <br />
+
       <Title>Realtor</Title>
       <br />
       <Scroll>

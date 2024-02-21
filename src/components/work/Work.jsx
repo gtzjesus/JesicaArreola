@@ -15,7 +15,7 @@ import styled from 'styled-components';
 // ------------------------------
 // This section has all CSS styles configured for every HTML element.
 const StyledWork = styled.div`
-  padding: var(--height-navigation) var(--padding-small);
+  padding: 0 var(--padding-small);
   display: inline-flex; /* Use inline-flex to shrink-wrap contents vertically */
   height: 50vh;
   width: 100vw;
@@ -58,22 +58,26 @@ const VerticalLine = styled.div`
 // This section has our React Component which handles the hook data
 function Work() {
   return (
-    <StyledWork>
-      <Section>
-        <Title>Title</Title>
-        <hr />
+    <>
+      <hr />
+      <StyledWork>
+        <Section>
+          <Title>
+            What I do <hr />
+          </Title>
+          <Icon src="/icons/downarrow.png"></Icon>
+        </Section>
 
-        <Icon src="/icons/downarrow.png"></Icon>
-      </Section>
-      <VerticalLine />
-      <Section>
-        <Content>Content</Content>
-      </Section>
-      <VerticalLine />
-      <Section>
-        <Additional>Additional</Additional>
-      </Section>
-    </StyledWork>
+        <VerticalLine />
+        <Section>
+          <Content>Content</Content>
+        </Section>
+        <VerticalLine />
+        <Section>
+          <Additional>Additional</Additional>
+        </Section>
+      </StyledWork>
+    </>
   );
 }
 
