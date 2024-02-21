@@ -15,7 +15,6 @@ import styled from 'styled-components';
 // ------------------------------
 // This section has all CSS styles configured for every HTML element.
 const StyledLanding = styled.div`
-  height: 200vh;
   padding: var(--height-navigation) 0;
 `;
 
