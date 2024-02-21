@@ -33,6 +33,12 @@ const Title = styled.div`
   /* Add your title styles here */
 `;
 
+const TitleInvisible = styled.div`
+  flex: 1;
+  color: var(--color-tan);
+  /* Add your title styles here */
+`;
+
 const Icon = styled.img`
   height: var(--logo-height);
 `;
@@ -55,7 +61,7 @@ const VerticalLine = styled.div`
 `;
 
 const VerticalLineInvisible = styled.div`
-  border-left: 1px solid var(--color-tan); /* Adjust thickness and color as needed */
+  border-left: 1px solid var(--color-black); /* Adjust thickness and color as needed */
   height: auto; /* Set height to auto to match content height */
   margin: 20px; /* Adjust spacing as needed */
 `;
@@ -105,10 +111,11 @@ function Work() {
           </Content>
         </Section>
       </StyledWork>
-      <hr />
+      <div className="hr-half-screen"></div>
+
       <StyledWork>
         <Section>
-          <Title></Title>
+          <TitleInvisible>What I do</TitleInvisible>
         </Section>
 
         <VerticalLineInvisible />
