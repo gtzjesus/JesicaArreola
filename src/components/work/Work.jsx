@@ -1,7 +1,7 @@
 // ------------------------------
-// File: Landing.js
+// File: Work.js
 // ------------------------------
-// Description: React component for displaying landing page (first thing USER sees).
+// Description: React component for displaying content.
 // ------------------------------
 
 // ------------------------------
