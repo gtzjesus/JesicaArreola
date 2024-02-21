@@ -28,6 +28,7 @@ const VerticalLine = styled.div`
   border-left: 1px solid var(--color-black); /* Adjust thickness and color as needed */
   height: auto; /* Set height to auto to match content height */
   margin: 0 20px; /* Adjust spacing as needed */
+  opacity: 0.5;
 `;
 
 const More = styled.div`

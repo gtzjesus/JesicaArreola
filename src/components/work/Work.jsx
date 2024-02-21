@@ -59,10 +59,11 @@ const VerticalLine = styled.div`
   border-left: 1px solid var(--color-black); /* Adjust thickness and color as needed */
   height: auto; /* Set height to auto to match content height */
   margin: 15px; /* Adjust spacing as needed */
+  opacity: 0.5;
 `;
 
 const VerticalLineInvisible = styled.div`
-  border-left: 1px solid var(--color-black); /* Adjust thickness and color as needed */
+  border-left: 1px solid var(--color-tan); /* Adjust thickness and color as needed */
   height: auto; /* Set height to auto to match content height */
   margin: 20px; /* Adjust spacing as needed */
 `;
@@ -145,12 +146,13 @@ function Work() {
             <br />
 
             <ContentDescription>
-              Develop and implement effective marketing strategies to showcase
-              properties to potential buyers.
+              Implement effective marketing strategies to showcase properties to
+              potential buyers.
             </ContentDescription>
           </Content>
         </Section>
       </StyledWork>
+      <hr />
     </>
   );
 }
