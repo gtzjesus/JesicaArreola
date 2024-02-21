@@ -46,14 +46,17 @@ const Hint = styled.span`
   padding-right: var(--padding-small);
 `;
 
+const Element = styled.div``;
+
 const Icon = styled.img`
   height: var(--logo-height);
+  padding-right: var(--padding-xxsmall);
 `;
 
 const Realtor = styled.div`
   // Code logic for setting the background
   // Design background from Figma software
-  background: url('backgrounds/jesica.jpg');
+  background: url('backgrounds/jesica.png');
   background-size: cover;
 
   height: 50vh;
@@ -72,7 +75,10 @@ function Landing() {
       <Scroll>
         <SubTitle>(Texas, United States)</SubTitle>
         <Hint>
-          <Icon src="/icons/downarrow.png"></Icon>Scroll Down
+          <Element>
+            <Icon src="/icons/downarrow.png"></Icon>
+          </Element>
+          <Element>Scroll Down</Element>
         </Hint>
       </Scroll>
       <Realtor></Realtor>
