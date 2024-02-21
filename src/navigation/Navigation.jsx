@@ -35,6 +35,8 @@ const Object = styled.div`
   padding: 0 var(--padding-small);
 `;
 
+const Link = styled.a``;
+
 const Logo = styled.img`
   height: var(--font-small);
   padding-left: var(--padding-xxsmall);
@@ -85,8 +87,6 @@ const MenuItem = styled.a`
   text-decoration: none;
   margin: 8px;
 `;
-
-const Link = styled.a``;
 
 // ------------------------------
 // Component

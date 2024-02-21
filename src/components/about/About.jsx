@@ -16,23 +16,38 @@ import styled from 'styled-components';
 // This section has all CSS styles configured for every HTML element.
 const StyledAbout = styled.div`
   padding: 0 var(--padding-small);
-  display: flex; /* Use flexbox to align items */
-  height: 50vh;
+  display: inline-flex; /* Use inline-flex to shrink-wrap contents vertically */
 `;
 
 const Me = styled.div`
-  flex: 1.5; /* Take up remaining space */
+  flex: 1.75; /* Take up remaining space */
   font-size: var(--font-medium);
 `;
 
 const VerticalLine = styled.div`
-  border-left: 1.5px solid var(--color-black); /* Adjust thickness and color as needed */
-  height: 100%; /* Ensure the line spans the full height */
+  border-left: 1px solid var(--color-black); /* Adjust thickness and color as needed */
+  height: auto; /* Set height to auto to match content height */
   margin: 0 20px; /* Adjust spacing as needed */
 `;
 
 const More = styled.div`
-  flex: 0.5; /* Take up remaining space */
+  flex: 0.25; /* Take up remaining space */
+  align-self: flex-end; /* Align to the bottom of the flex container */
+`;
+
+const Test = styled.div``;
+
+const Link = styled.a`
+  position: relative;
+`;
+
+const Logo = styled.img`
+  height: var(--font-small);
+  padding-top: var(--padding-xxsmall);
+  color: white;
+  @media (min-width: 61.25em) {
+    padding: 0 var(--padding-medium) 0 0;
+  }
 `;
 
 // ------------------------------
@@ -47,7 +62,18 @@ function About() {
         lifestyle.
       </Me>
       <VerticalLine />
-      <More>About me</More>
+      <Test> About me</Test>
+      <More>
+        <br />
+        <Link target="_blank" href="https://www.instagram.com/jesicaarlette/">
+          {/* <!--  Container for logo and title --> */}
+          <Logo src="/icons/instagram.png" alt="instagram"></Logo>
+        </Link>
+        <br />
+        <Link target="_blank" href="https://www.facebook.com/iarlette">
+          <Logo src="/icons/facebook.png" alt="facebook"></Logo>
+        </Link>
+      </More>
     </StyledAbout>
   );
 }
