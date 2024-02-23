@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import House from './House';
 
 const StyledHouses = styled.div`
-  height: 100vh;
+  color: var(--color-black);
 `;
 
 const HousesArea = styled.div`

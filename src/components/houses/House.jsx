@@ -52,6 +52,28 @@ const Video = styled.video`
   height: 100%;
 `;
 
+const Address = styled.div`
+  font-size: var(--font-medium);
+`;
+
+const Price = styled.div`
+  font-size: var(--font-medium);
+`;
+
+const Beds = styled.div`
+  font-size: var(--font-medium);
+`;
+
+const Baths = styled.div`
+  font-size: var(--font-medium);
+`;
+
+const Sqft = styled.div`
+  font-size: var(--font-medium);
+`;
+
+
+
 // ------------------------------
 // Component
 // ------------------------------
@@ -73,6 +95,11 @@ function House({ house }) {
       <Video preload="auto" autoPlay loop muted playsInline>
         <source src={completeHouse.video} type="video/mp4" />
       </Video>
+      <Address>{completeHouse.address}</Address>
+      <Price>{completeHouse.price}</Price>
+      <Beds>{completeHouse.beds}</Beds>
+      <Baths>{completeHouse.baths}</Baths>
+      <Sqft>{completeHouse.sqft}</Sqft>
     </StyledHouse>
   );
 }
