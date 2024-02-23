@@ -41,3 +41,9 @@ hr {
   margin-bottom: 20px;
   margin-left: auto; /* Float to the right */
 }
+
+/* // CAROUSEL */
+/* ACTIVE DESIGN STATE */
+.HousesDot.active {
+  background-color: var(--color-white);
+}
