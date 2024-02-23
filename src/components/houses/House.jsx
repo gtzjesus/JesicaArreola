@@ -72,14 +72,13 @@ const Sqft = styled.div`
   font-size: var(--font-medium);
 `;
 
-
-
 // ------------------------------
 // Component
 // ------------------------------
 // This section has our React Component which handles the every individual design added to supabase
 
 function House({ house }) {
+  console.log(house);
   const completeHouse = {
     id: house.id,
     address: house.address,

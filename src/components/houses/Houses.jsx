@@ -60,7 +60,7 @@ function Houses() {
     async function fetchHouses() {
       try {
         const response = await fetch(
-          'https://jesicaarreola-backend-d9d5783c3027.herokuapp.com/houses'
+          'https://jesicaarreola-backend-d9d5783c3027.herokuapp.com/api/houses'
         );
         if (!response.ok) {
           throw new Error('Failed fo fetch houses');
