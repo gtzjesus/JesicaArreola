@@ -21,7 +21,7 @@ const HousesAreaSlider = styled.div`
 
 function Houses() {
   // Code logic for delay carousel
-  const delay = 5000;
+  const delay = 7500;
 
   const [index, setIndex] = useState(0);
   const [houses, setHouses] = useState([]);
