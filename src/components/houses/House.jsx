@@ -20,7 +20,7 @@ const StyledHouse = styled.div`
   overflow: hidden;
   height: fit-content;
   width: var(--width-filled-window);
-
+  color: var(--color-black);
   // @MEDIAQUERY logic for smaller devices
   @media (max-width: 39.25em) {
     width: 100vw;
@@ -44,29 +44,34 @@ const StyledHouse = styled.div`
   }
 `;
 
-const Video = styled.video`
-  // Code logic to style video (mp4)
-  width: 100%;
-  height: 100%;
+// const Video = styled.video`
+//   // Code logic to style video (mp4)
+//   width: 100%;
+//   height: 100%;
+// `;
+
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
-const Address = styled.div`
+const Address = styled.span`
   font-size: var(--font-medium);
 `;
 
-const Price = styled.div`
+const Price = styled.span`
   font-size: var(--font-medium);
 `;
 
-const Beds = styled.div`
+const Beds = styled.span`
   font-size: var(--font-medium);
 `;
 
-const Baths = styled.div`
+const Baths = styled.span`
   font-size: var(--font-medium);
 `;
 
-const Sqft = styled.div`
+const Sqft = styled.span`
   font-size: var(--font-medium);
 `;
 
@@ -76,27 +81,36 @@ const Sqft = styled.div`
 // This section has our React Component which handles the every individual design added to supabase
 
 function House({ house }) {
-  console.log(house);
-
   // Check if the house object is undefined or null
   if (!house) {
     return <div>No house data available</div>;
   }
 
   // Destructure the house object or provide default values to prevent errors
-  const { id, address, price, beds, baths, sqft, video } = house || {};
+  // Code logic to create object (design)
+  const Home = {
+    id: house.id,
+    address: house.address,
+    price: house.price,
+    beds: house.beds,
+    baths: house.baths,
+    sqft: house.sqft,
+    video: house.video,
+  };
 
   return (
     <StyledHouse>
-      <Video preload="auto" autoPlay loop muted playsInline>
-        <source src={video} type="video/mp4" />
-      </Video>
-      <Address>{id}</Address>
-      <Address>{address}</Address>
-      <Price>{price}</Price>
-      <Beds>{beds}</Beds>
-      <Baths>{baths}</Baths>
-      <Sqft>{sqft}</Sqft>
+      {/* <Video preload="auto" autoPlay loop muted playsInline>
+        <source src={Home.video} type="video/mp4" />
+      </Video> */}
+      <Details>
+        <div>{Home.id}</div>
+        <Address>{Home.address}</Address>
+        <Price>{Home.price}</Price>
+        <Beds>{Home.beds}</Beds>
+        <Baths>{Home.baths}</Baths>
+        <Sqft>{Home.sqft}</Sqft>
+      </Details>
     </StyledHouse>
   );
 }
