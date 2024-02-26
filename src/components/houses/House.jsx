@@ -21,34 +21,13 @@ const StyledHouse = styled.div`
   height: fit-content;
   width: var(--width-filled-window);
   color: var(--color-black);
-  // @MEDIAQUERY logic for smaller devices
-  @media (max-width: 39.25em) {
-    width: 100vw;
-    height: 65vh;
-  }
-
-  // @MEDIAQUERY logic for smaller devices
-  @media (min-width: 40.25em) {
-    width: 100vw;
-    height: 80vh;
-  }
-  // @MEDIAQUERY logic for medium devices
-  @media (min-width: 78.25em) {
-    width: 100vw;
-    height: 80vh;
-  }
-  // @MEDIAQUERY logic for bigger devices
-  @media (min-width: 150.15em) {
-    width: 100vw;
-    height: 75vh;
-  }
 `;
 
-// const Video = styled.video`
-//   // Code logic to style video (mp4)
-//   width: 100%;
-//   height: 100%;
-// `;
+const Video = styled.video`
+  // Code logic to style video (mp4)
+  width: 100%;
+  height: 100%;
+`;
 
 const Details = styled.div`
   display: flex;
@@ -56,7 +35,7 @@ const Details = styled.div`
 `;
 
 const Address = styled.span`
-  font-size: var(--font-medium);
+  font-size: var(--font-xsmall);
 `;
 
 const Price = styled.span`
@@ -64,15 +43,15 @@ const Price = styled.span`
 `;
 
 const Beds = styled.span`
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
 `;
 
 const Baths = styled.span`
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
 `;
 
 const Sqft = styled.span`
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
 `;
 
 // ------------------------------
@@ -89,7 +68,6 @@ function House({ house }) {
   // Destructure the house object or provide default values to prevent errors
   // Code logic to create object (design)
   const Home = {
-    id: house.id,
     address: house.address,
     price: house.price,
     beds: house.beds,
@@ -100,11 +78,10 @@ function House({ house }) {
 
   return (
     <StyledHouse>
-      {/* <Video preload="auto" autoPlay loop muted playsInline>
+      <Video preload="auto" autoPlay loop muted playsInline>
         <source src={Home.video} type="video/mp4" />
-      </Video> */}
+      </Video>
       <Details>
-        <div>{Home.id}</div>
         <Address>{Home.address}</Address>
         <Price>{Home.price}</Price>
         <Beds>{Home.beds}</Beds>
