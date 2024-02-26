@@ -34,23 +34,23 @@ const Details = styled.div`
 `;
 
 const Address = styled.span`
-  font-size: var(--font-xsmall);
+  font-size: var(--font-xxxsmall);
 `;
 
 const Price = styled.span`
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
 `;
 
 const Beds = styled.span`
-  font-size: var(--font-small);
+  font-size: var(--font-xsmall);
 `;
 
 const Baths = styled.span`
-  font-size: var(--font-small);
+  font-size: var(--font-xsmall);
 `;
 
 const Sqft = styled.span`
-  font-size: var(--font-small);
+  font-size: var(--font-xsmall);
 `;
 
 // ------------------------------

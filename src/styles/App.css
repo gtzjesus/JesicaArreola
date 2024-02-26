@@ -46,3 +46,8 @@ hr {
 .HousesDot.active {
   background-color: var(--color-white);
 }
+
+/* Appropriate CSS file */
+.banner-container {
+  overflow-x: hidden; /* Hide horizontal overflow */
+}

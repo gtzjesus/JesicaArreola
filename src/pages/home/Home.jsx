@@ -12,7 +12,9 @@ function Home() {
       <Landing />
       <About />
       <Work />
-      <Banner />
+      <div className="banner-container">
+        <Banner />
+      </div>
       <Houses />
     </>
   );
