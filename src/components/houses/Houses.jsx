@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import House from './House';
 
 const StyledHouses = styled.div`
   color: var(--color-black);
+  overflow-x: hidden;
 `;
 
 const HousesArea = styled.div`
@@ -19,7 +20,20 @@ const HousesAreaSlider = styled.div`
 `;
 
 function Houses() {
+  // Code logic for delay carousel
+  const delay = 1000;
+
+  const [index, setIndex] = useState(0);
   const [houses, setHouses] = useState([]);
+
+  const timeoutRef = useRef(null);
+
+  // Handle reseting the time
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
 
   // Code logic to fetch Houses data from backend when component mounts
   useEffect(() => {
@@ -41,14 +55,38 @@ function Houses() {
     fetchHouses();
   }, []);
 
+  // Code logic useEffect react hook for setting the timeout functionality
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === houses.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index, houses]);
+
   return (
     <StyledHouses>
       <HousesArea>
-        <HousesAreaSlider>
-          {houses.map((house) => (
-            <House key={house.id} house={house} />
-          ))}
-        </HousesAreaSlider>
+        {houses.length > 0 && ( // Check if houses array is not empty
+          <HousesAreaSlider
+            style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          >
+            {houses.map((house) => (
+              <House
+                key={house.id}
+                house={house}
+                style={{ width: `${100 / houses.length}%` }}
+              />
+            ))}
+          </HousesAreaSlider>
+        )}
       </HousesArea>
     </StyledHouses>
   );

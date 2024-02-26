@@ -19,7 +19,7 @@ const StyledHouse = styled.div`
   display: inline-block;
   overflow: hidden;
   height: fit-content;
-  width: var(--width-filled-window);
+  width: 100vw;
   color: var(--color-black);
 `;
 
