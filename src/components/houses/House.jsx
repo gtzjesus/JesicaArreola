@@ -18,15 +18,13 @@ const StyledHouse = styled.div`
   // Code logic to display every design side-by-side
   display: inline-block;
   overflow: hidden;
-  height: fit-content;
-  width: 100vw;
-  color: var(--color-black);
+  width: var(--width-filled-window);
 `;
 
 const Video = styled.video`
   // Code logic to style video (mp4)
   width: 100%;
-  height: 100%;
+  height: 50vh;
 `;
 
 const Details = styled.div`
