@@ -19,17 +19,31 @@ const HousesAreaSlider = styled.div`
   transition: ease 1100ms;
 `;
 
+const HousesDots = styled.div`
+  // Code logic for achievement dots, where user can navigate between apps
+  text-align: center;
+  padding: var(--padding-medium);
+`;
+
+const HousesDot = styled.div`
+  // Code logic for displaying single dot
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  background-color: var(--color-black);
+`;
+
 function Houses() {
   // Code logic for delay carousel
   const delay = 7500;
 
   const [index, setIndex] = useState(0);
   const [houses, setHouses] = useState([]);
-  const [touchStart, setTouchStart] = useState(0);
 
   const timeoutRef = useRef(null);
-
-  const housesAreaRef = useRef(null);
 
   // Handle reseting the time
   function resetTimeout() {
@@ -74,47 +88,34 @@ function Houses() {
     };
   }, [index, houses]);
 
-  const handleTouchStart = (event) => {
-    setTouchStart(event.touches[0].clientX);
-  };
-
-  const handleTouchMove = (event) => {
-    const touchEnd = event.touches[0].clientX;
-    const distance = touchStart - touchEnd;
-    if (distance > 0) {
-      // Swiped left
-      handleNext();
-    } else if (distance < 0) {
-      // Swiped right
-      handlePrev();
-    }
-  };
-
-  const handleNext = () => {
-    setIndex((prevIndex) =>
-      prevIndex === houses.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setIndex((prevIndex) =>
-      prevIndex === 0 ? houses.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <StyledHouses>
-      <HousesArea ref={housesAreaRef}>
-        <HousesAreaSlider
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-        >
-          {houses.map((house) => (
-            <House key={house.id} house={house} />
-          ))}
-        </HousesAreaSlider>
+      <HousesArea>
+        {houses.length > 0 && ( // Check if houses array is not empty
+          <HousesAreaSlider
+            style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          >
+            {houses.map((house) => (
+              <House
+                key={house.id}
+                house={house}
+                style={{ width: `${100 / houses.length}%` }}
+              />
+            ))}
+          </HousesAreaSlider>
+        )}
       </HousesArea>
+      <HousesDots>
+        {houses.map((_, idx) => (
+          <HousesDot
+            key={idx}
+            className={`HousesDot${index === idx ? ' active' : ''}`}
+            onClick={() => {
+              setIndex(idx);
+            }}
+          ></HousesDot>
+        ))}
+      </HousesDots>
     </StyledHouses>
   );
 }

@@ -44,7 +44,7 @@ hr {
 /* // CAROUSEL */
 /* ACTIVE DESIGN STATE */
 .HousesDot.active {
-  background-color: var(--color-white);
+  background-color: var(--color-yellow);
 }
 
 /* Appropriate CSS file */
