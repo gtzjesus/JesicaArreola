@@ -4,38 +4,27 @@ import House from './House';
 
 const StyledHouses = styled.div`
   color: var(--color-black);
-  overflow-x: hidden;
 `;
 
 const HousesArea = styled.div`
-  // Code logic to cover the full screen of the device user is in
   margin: 0 auto;
   max-width: var(--width-filled-window);
+  overflow: hidden; /* Ensure the container clips the carousel */
+  position: relative; /* Necessary for absolute positioning of carousel */
 `;
 
 const HousesAreaSlider = styled.div`
-  // Code logic for slider (multiple videos)
-  white-space: nowrap;
+  display: flex;
   transition: ease 1100ms;
 `;
 
 function Houses() {
-  // Code logic for delay carousel
-  const delay = 7500;
-
   const [index, setIndex] = useState(0);
   const [houses, setHouses] = useState([]);
+  const [touchStart, setTouchStart] = useState(0);
 
-  const timeoutRef = useRef(null);
+  const housesAreaRef = useRef(null);
 
-  // Handle reseting the time
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
-
-  // Code logic to fetch Houses data from backend when component mounts
   useEffect(() => {
     async function fetchHouses() {
       try {
@@ -43,11 +32,11 @@ function Houses() {
           'https://jesicaarreola-backend-d9d5783c3027.herokuapp.com/api/houses'
         );
         if (!response.ok) {
-          throw new Error('Failed fo fetch houses');
+          throw new Error('Failed to fetch houses');
         }
 
         const data = await response.json();
-        setHouses(data); // Update the state with fetched houses
+        setHouses(data);
       } catch (error) {
         console.log(error);
       }
@@ -55,38 +44,46 @@ function Houses() {
     fetchHouses();
   }, []);
 
-  // Code logic useEffect react hook for setting the timeout functionality
-  useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(
-      () =>
-        setIndex((prevIndex) =>
-          prevIndex === houses.length - 1 ? 0 : prevIndex + 1
-        ),
-      delay
-    );
+  const handleTouchStart = (event) => {
+    setTouchStart(event.touches[0].clientX);
+  };
 
-    return () => {
-      resetTimeout();
-    };
-  }, [index, houses]);
+  const handleTouchMove = (event) => {
+    const touchEnd = event.touches[0].clientX;
+    const distance = touchStart - touchEnd;
+    if (distance > 0) {
+      // Swiped left
+      handleNext();
+    } else if (distance < 0) {
+      // Swiped right
+      handlePrev();
+    }
+  };
+
+  const handleNext = () => {
+    setIndex((prevIndex) =>
+      prevIndex === houses.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? houses.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <StyledHouses>
-      <HousesArea>
-        {houses.length > 0 && ( // Check if houses array is not empty
-          <HousesAreaSlider
-            style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-          >
-            {houses.map((house) => (
-              <House
-                key={house.id}
-                house={house}
-                style={{ width: `${100 / houses.length}%` }}
-              />
-            ))}
-          </HousesAreaSlider>
-        )}
+      <HousesArea ref={housesAreaRef}>
+        <HousesAreaSlider
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
+          {houses.map((house) => (
+            <House key={house.id} house={house} />
+          ))}
+        </HousesAreaSlider>
       </HousesArea>
     </StyledHouses>
   );

@@ -1,92 +1,95 @@
-import { useEffect, useRef, useState } from 'react';
+/* eslint-disable react/prop-types */
+// ------------------------------
+// File: Design.js
+// ------------------------------
+// Description: React individual component for each achievement done by WorldHello (the design videos will be displayed with this reusable component dynamically), using supabase integration (backend)
+// ------------------------------
+// Figma Designs + Video Screen Editor/Recording.
+// ------------------------------
+// Global Styles from /src/styles/ used for global variables.
+
+// ------------------------------
+// Imports
+// ------------------------------
+// This section has all necessary imports for this component.
 import styled from 'styled-components';
-import House from './House';
 
-const StyledHouses = styled.div`
-  color: var(--color-black);
+const StyledHouse = styled.div`
+  // Code logic to display every design side-by-side
+  display: inline-block;
+  overflow: hidden;
+  width: var(--width-filled-window);
 `;
 
-const HousesArea = styled.div`
-  margin: 0 auto;
-  max-width: var(--width-filled-window);
-  overflow: hidden; /* Ensure the container clips the carousel */
-  position: relative; /* Necessary for absolute positioning of carousel */
+const Video = styled.video`
+  // Code logic to style video (mp4)
+  width: 100%;
+  height: 75vh;
 `;
 
-const HousesAreaSlider = styled.div`
+const Details = styled.div`
   display: flex;
-  transition: ease 1100ms;
+  flex-direction: column;
+  padding: var(--padding-small) var(--padding-medium);
 `;
 
-function Houses() {
-  const [index, setIndex] = useState(0);
-  const [houses, setHouses] = useState([]);
-  const [touchStart, setTouchStart] = useState(0);
+const Address = styled.span`
+  font-size: var(--font-xxxsmall);
+`;
 
-  const housesAreaRef = useRef(null);
+const Price = styled.span`
+  font-size: var(--font-small);
+`;
 
-  useEffect(() => {
-    async function fetchHouses() {
-      try {
-        const response = await fetch(
-          'https://jesicaarreola-backend-d9d5783c3027.herokuapp.com/api/houses'
-        );
-        if (!response.ok) {
-          throw new Error('Failed to fetch houses');
-        }
+const Beds = styled.span`
+  font-size: var(--font-xsmall);
+`;
 
-        const data = await response.json();
-        setHouses(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchHouses();
-  }, []);
+const Baths = styled.span`
+  font-size: var(--font-xsmall);
+`;
 
-  const handleTouchStart = (event) => {
-    setTouchStart(event.touches[0].clientX);
-  };
+const Sqft = styled.span`
+  font-size: var(--font-xsmall);
+`;
 
-  const handleTouchMove = (event) => {
-    const touchEnd = event.touches[0].clientX;
-    const distance = touchStart - touchEnd;
-    if (distance > 0) {
-      // Swiped left
-      handleNext();
-    } else if (distance < 0) {
-      // Swiped right
-      handlePrev();
-    }
-  };
+// ------------------------------
+// Component
+// ------------------------------
+// This section has our React Component which handles the every individual design added to supabase
 
-  const handleNext = () => {
-    setIndex((prevIndex) =>
-      prevIndex === houses.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+function House({ house }) {
+  // Check if the house object is undefined or null
+  if (!house) {
+    return <div>No house data available</div>;
+  }
 
-  const handlePrev = () => {
-    setIndex((prevIndex) =>
-      prevIndex === 0 ? houses.length - 1 : prevIndex - 1
-    );
+  // Destructure the house object or provide default values to prevent errors
+  // Code logic to create object (design)
+  const Home = {
+    address: house.address,
+    price: house.price,
+    beds: house.beds,
+    baths: house.baths,
+    sqft: house.sqft,
+    video: house.video,
   };
 
   return (
-    <StyledHouses>
-      <HousesArea ref={housesAreaRef}>
-        <HousesAreaSlider
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-        >
-          {houses.map((house) => (
-            <House key={house.id} house={house} />
-          ))}
-        </HousesAreaSlider>
-      </HousesArea>
-    </StyledHouses>
+    <StyledHouse>
+      <Video preload="auto" autoPlay loop muted playsInline>
+        <source src={Home.video} type="video/mp4" />
+      </Video>
+      <Details>
+        <Address>{Home.address}</Address>
+        <Price>${Home.price}</Price>
+        <Beds>{Home.beds} beds</Beds>
+        <Baths>{Home.baths} baths</Baths>
+        <Sqft>{Home.sqft} sqft</Sqft>
+      </Details>
+    </StyledHouse>
   );
 }
 
-export default Houses;
+// Export reusable Individual Design component
+export default House;
