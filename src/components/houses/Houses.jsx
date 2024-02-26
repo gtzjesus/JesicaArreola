@@ -74,13 +74,14 @@ function Houses() {
     }
     fetchHouses();
   }, []);
+
   return (
     <StyledHouses>
       <HousesArea>
         <HousesAreaSlider>
           {/* <!-- Map the array of dehousessigns and display all as new House Component --> */}
           {houses.map((house) => (
-            <House key={house.id} {...house} />
+            <House house={house} key={house.id} />
           ))}
         </HousesAreaSlider>
       </HousesArea>

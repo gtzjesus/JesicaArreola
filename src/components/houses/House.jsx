@@ -15,8 +15,6 @@
 import styled from 'styled-components';
 
 const StyledHouse = styled.div`
-  // Code logic to rotate videos that are horizontal for my designs
-  transform: rotate(90deg);
   // Code logic to display every design side-by-side
   display: inline-block;
   overflow: hidden;
@@ -79,26 +77,26 @@ const Sqft = styled.div`
 
 function House({ house }) {
   console.log(house);
-  const completeHouse = {
-    id: house.id,
-    address: house.address,
-    price: house.price,
-    beds: house.beds,
-    baths: house.baths,
-    sqft: house.sqft,
-    video: house.video,
-  };
+
+  // Check if the house object is undefined or null
+  if (!house) {
+    return <div>No house data available</div>;
+  }
+
+  // Destructure the house object or provide default values to prevent errors
+  const { id, address, price, beds, baths, sqft, video } = house || {};
 
   return (
     <StyledHouse>
       <Video preload="auto" autoPlay loop muted playsInline>
-        <source src={completeHouse.video} type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </Video>
-      <Address>{completeHouse.address}</Address>
-      <Price>{completeHouse.price}</Price>
-      <Beds>{completeHouse.beds}</Beds>
-      <Baths>{completeHouse.baths}</Baths>
-      <Sqft>{completeHouse.sqft}</Sqft>
+      <Address>{id}</Address>
+      <Address>{address}</Address>
+      <Price>{price}</Price>
+      <Beds>{beds}</Beds>
+      <Baths>{baths}</Baths>
+      <Sqft>{sqft}</Sqft>
     </StyledHouse>
   );
 }
