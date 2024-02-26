@@ -24,12 +24,13 @@ const StyledHouse = styled.div`
 const Video = styled.video`
   // Code logic to style video (mp4)
   width: 100%;
-  height: 50vh;
+  height: 75vh;
 `;
 
 const Details = styled.div`
   display: flex;
   flex-direction: column;
+  padding: var(--padding-medium);
 `;
 
 const Address = styled.span`
@@ -81,10 +82,10 @@ function House({ house }) {
       </Video>
       <Details>
         <Address>{Home.address}</Address>
-        <Price>{Home.price}</Price>
-        <Beds>{Home.beds}</Beds>
-        <Baths>{Home.baths}</Baths>
-        <Sqft>{Home.sqft}</Sqft>
+        <Price>${Home.price}</Price>
+        <Beds>{Home.beds} beds</Beds>
+        <Baths>{Home.baths} baths</Baths>
+        <Sqft>{Home.sqft} sqft</Sqft>
       </Details>
     </StyledHouse>
   );
