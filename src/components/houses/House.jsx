@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 // ------------------------------
-// File: Design.js
+// File: House.js
 // ------------------------------
-// Description: React individual component for each achievement done by WorldHello (the design videos will be displayed with this reusable component dynamically), using supabase integration (backend)
+// Description: React individual component for each House (the house videos will be displayed with this reusable component dynamically), using supabase integration (backend)
 // ------------------------------
 // Figma Designs + Video Screen Editor/Recording.
 // ------------------------------
@@ -56,7 +56,7 @@ const Sqft = styled.span`
 // ------------------------------
 // Component
 // ------------------------------
-// This section has our React Component which handles the every individual design added to supabase
+// This section has our React Component which handles the every individual house added to supabase
 
 function House({ house }) {
   // Check if the house object is undefined or null
