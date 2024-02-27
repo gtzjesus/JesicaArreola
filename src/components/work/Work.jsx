@@ -30,12 +30,7 @@ const Section = styled.div`
 
 const Title = styled.div`
   flex: 1;
-  /* Add your title styles here */
-`;
-
-const TitleInvisible = styled.div`
-  flex: 1;
-  color: var(--color-tan);
+  font-size: var(--font-small);
   /* Add your title styles here */
 `;
 
@@ -62,12 +57,6 @@ const VerticalLine = styled.div`
   opacity: 0.5;
 `;
 
-const VerticalLineInvisible = styled.div`
-  border-left: 1px solid var(--color-tan); /* Adjust thickness and color as needed */
-  height: auto; /* Set height to auto to match content height */
-  margin: 20px; /* Adjust spacing as needed */
-`;
-
 // ------------------------------
 // Component
 // ------------------------------
@@ -81,8 +70,8 @@ function Work() {
           <Title>What I do</Title>
           <Icon src="/icons/downarrow.png"></Icon>
         </Section>
-
-        <VerticalLine />
+      </StyledWork>
+      <StyledWork>
         <Section>
           <Content>
             <ContentTitle>
@@ -113,14 +102,8 @@ function Work() {
           </Content>
         </Section>
       </StyledWork>
-      <div className="hr-half-screen"></div>
 
       <StyledWork>
-        <Section>
-          <TitleInvisible>What I do</TitleInvisible>
-        </Section>
-
-        <VerticalLineInvisible />
         <Section>
           <Content>
             <ContentTitle>
