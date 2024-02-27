@@ -96,7 +96,7 @@ function Work() {
             <br />
 
             <ContentDescription>
-              Assist clients in market dynamics, predict future trends, and make
+              Assist clients in the housing market, look for trends, and make
               strategic investment decisions.
             </ContentDescription>
           </Content>
