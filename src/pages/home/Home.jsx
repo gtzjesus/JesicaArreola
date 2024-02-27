@@ -8,12 +8,14 @@ import Banner from '../../ui/banners/Banner';
 function Home() {
   return (
     <>
-      <Navigation />
-      <Landing />
-      <About />
-      <Work />
-      <div className="banner-container">
-        <Banner />
+      <div className="container">
+        <Navigation />
+        <Landing />
+        <About />
+        <Work />
+        <div className="banner-container">
+          <Banner />
+        </div>
       </div>
       <Houses />
     </>

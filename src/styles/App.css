@@ -9,6 +9,19 @@
   background-color: var(--color-tan);
 }
 
+/* CSS for mobile view */
+.container {
+}
+
+/* Media query for larger devices */
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px;
+  }
+}
+
 /* Creating Horizontal line (fullscreen) */
 hr {
   display: block;
