@@ -32,7 +32,7 @@ const Details = styled.div`
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
-  padding: 0 var(--padding-medium);
+  padding: var(--padding-medium) var(--padding-medium) 0 var(--padding-medium);
 `;
 
 const Address = styled.span`
