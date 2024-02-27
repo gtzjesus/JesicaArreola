@@ -36,9 +36,7 @@ const More = styled.div`
   align-self: flex-end; /* Align to the bottom of the flex container */
 `;
 
-const Title = styled.span`
-  font-size: var(--font-small);
-`;
+const Title = styled.span``;
 
 const Link = styled.a`
   position: relative;
