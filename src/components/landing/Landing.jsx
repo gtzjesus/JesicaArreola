@@ -30,18 +30,16 @@ const Scroll = styled.div`
   justify-content: space-between;
   // Code logic for positioning fixed in all web app + header config
   width: var(--width-full-window);
-
   // Padding for all
   padding: var(--padding-small) 0;
 `;
 
 const SubTitle = styled.span`
-  font-size: var(--font-xxxsmall);
   padding-left: var(--padding-small);
 `;
 
-const Hint = styled.span`
-  font-size: var(--font-xxxsmall);
+const Hint = styled.div`
+  display: flex;
   padding-right: var(--padding-small);
 `;
 
@@ -75,10 +73,10 @@ function Landing() {
       <Scroll>
         <SubTitle>(Texas, United States)</SubTitle>
         <Hint>
+          <Element>Scroll Down</Element>
           <Element>
             <Icon src="/icons/downarrow.png"></Icon>
           </Element>
-          <Element>Scroll Down</Element>
         </Hint>
       </Scroll>
       <Realtor></Realtor>
