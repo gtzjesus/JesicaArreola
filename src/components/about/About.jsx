@@ -63,7 +63,9 @@ function About() {
         lifestyle.
       </Me>
       <VerticalLine />
-      <Title> About me</Title>
+      <Title>
+        About <br /> me
+      </Title>
       <More>
         <br />
         <Link target="_blank" href="https://www.instagram.com/jesicaarlette/">
