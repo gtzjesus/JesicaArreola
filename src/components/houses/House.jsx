@@ -30,7 +30,9 @@ const Video = styled.video`
 const Details = styled.div`
   display: flex;
   flex-direction: column;
-  padding: var(--padding-xxxsmall) var(--padding-medium);
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 var(--padding-medium);
 `;
 
 const Address = styled.span`

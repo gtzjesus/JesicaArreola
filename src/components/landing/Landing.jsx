@@ -29,7 +29,7 @@ const Scroll = styled.div`
   align-items: center;
   justify-content: space-between;
   // Code logic for positioning fixed in all web app + header config
-  width: var(--width-full-window);
+  max-width: 600px; /* Adjust as needed */
   // Padding for all
   padding: var(--padding-small) 0;
 `;

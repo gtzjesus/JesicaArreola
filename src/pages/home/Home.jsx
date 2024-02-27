@@ -8,8 +8,8 @@ import Banner from '../../ui/banners/Banner';
 function Home() {
   return (
     <>
-      <div className="container">
-        <Navigation />
+      <Navigation />
+      <div className="responsive-container">
         <Landing />
         <About />
         <Work />
