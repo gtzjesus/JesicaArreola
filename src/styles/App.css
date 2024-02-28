@@ -9,15 +9,6 @@
   background-color: var(--color-tan);
 }
 
-/* Media query for larger devices */
-@media (min-width: 768px) {
-  .responsive-container {
-    max-width: 600px; /* Adjust as needed */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 0 20px;
-  }
-}
-
 /* Creating Horizontal line (fullscreen) */
 hr {
   display: block;
@@ -54,9 +45,4 @@ hr {
 /* ACTIVE DESIGN STATE */
 .HousesDot.active {
   background-color: var(--color-yellow);
-}
-
-/* Appropriate CSS file */
-.banner-container {
-  overflow-x: hidden; /* Hide horizontal overflow */
 }

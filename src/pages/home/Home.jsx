@@ -1,23 +1,40 @@
+import styled from 'styled-components';
 import About from '../../components/about/About';
 import Houses from '../../components/houses/Houses';
 import Landing from '../../components/landing/Landing';
 import Work from '../../components/work/Work';
 import Navigation from '../../navigation/Navigation';
 import Banner from '../../ui/banners/Banner';
+import Form from '../../components/form/Form';
+
+/* Media query for larger devices */
+
+const ResponsiveContainer = styled.div`
+  @media (min-width: 768px) {
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px;
+  }
+`;
+
+const BannerContainer = styled.div`
+  overflow-x: hidden; /* Hide horizontal overflow */
+`;
 
 function Home() {
   return (
     <>
       <Navigation />
-      <div className="responsive-container">
+      <ResponsiveContainer>
         <Landing />
         <About />
         <Work />
-        <div className="banner-container">
+        <BannerContainer>
           <Banner />
-        </div>
-      </div>
+        </BannerContainer>
+      </ResponsiveContainer>
       <Houses />
+      <Form />
     </>
   );
 }
