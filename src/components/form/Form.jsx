@@ -79,6 +79,8 @@ const HorizontalGroup = styled.div`
 
 const Label = styled.label`
   float: left;
+  font-size: 16px;
+  margin-bottom: 8px;
 `;
 
 const Input = styled.input`
@@ -391,7 +393,7 @@ function Form() {
               //   value={formData.howDidYouHear}
               //   onChange={handleInputChange}
             >
-              <Option value="googleSearch">Google Search</Option>
+              <Option value="googleSearch">Google</Option>
               <Option value="socialMedia">Social Media</Option>
               <Option value="friend">Friend</Option>
               <Option value="ad">Ad</Option>
