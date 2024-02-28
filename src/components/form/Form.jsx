@@ -54,6 +54,15 @@ const FormTitle = styled.span`
   font-size: var(--font-large);
 `;
 
+const FormSubTitle = styled.span`
+  font-size: var(--font-xsmall);
+`;
+
+const Icon = styled.img`
+  height: var(--logo-height);
+  padding-right: var(--padding-xxsmall);
+`;
+
 const FormGroup = styled.div`
   margin-bottom: var(--margin-form);
 `;
@@ -267,9 +276,17 @@ function Form() {
         action="https://worldhello-backend-fd375c76bbd5.herokuapp.com/api/sendEmail"
         method="POST"
       >
-        <FormTitle>Contact Me</FormTitle>
+        <FormTitle>Let&rsquo;s Team Up</FormTitle>
         <br />
+        <FormSubTitle>for success in the real estate market</FormSubTitle>
+
         <FormGroup>
+          <br />
+          <br />
+          <FormSubTitle>just start the conversation below</FormSubTitle>
+          <Icon src="/icons/downarrow.png"></Icon>
+          <br />
+          <br />
           <FormRow>
             <Label htmlFor="name">
               First and Last Name<Asterik>*</Asterik>
@@ -342,7 +359,7 @@ function Form() {
 
         <FormGroup>
           <FormRow>
-            <Label htmlFor="howDidYouHear">How did you hear about us?</Label>
+            <Label htmlFor="howDidYouHear">How did you hear about me?</Label>
             <Select
               id="howDidYouHear"
               name="howDidYouHear"

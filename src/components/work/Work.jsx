@@ -81,8 +81,8 @@ function Work() {
             <br />
 
             <ContentDescription>
-              Help sellers determine the optimal listing price and assist buyers
-              in making smart purchase decisions.
+              Assist buyers in making smart purchase decisions and help sellers
+              determine the best listing prices.
             </ContentDescription>
           </Content>
         </Section>
@@ -114,8 +114,8 @@ function Work() {
             <br />
 
             <ContentDescription>
-              Negotiate on behalf of clients with price, terms of sale,
-              contingencies, and contract details.
+              Negotiate on behalf of clients with price, terms of sale, and
+              contract details.
             </ContentDescription>
           </Content>
         </Section>
@@ -129,7 +129,7 @@ function Work() {
             <br />
 
             <ContentDescription>
-              Implement effective marketing strategies to showcase properties to
+              Create effective marketing strategies to showcase properties to
               potential buyers.
             </ContentDescription>
           </Content>
