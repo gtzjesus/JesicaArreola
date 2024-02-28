@@ -34,7 +34,9 @@ function Home() {
         </BannerContainer>
       </ResponsiveContainer>
       <Houses />
-      <Form />
+      <ResponsiveContainer>
+        <Form />
+      </ResponsiveContainer>
     </>
   );
 }
