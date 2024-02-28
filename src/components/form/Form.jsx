@@ -82,21 +82,48 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  max-width: fit-content;
-  padding: var(--padding-small);
+  max-width: 100%;
+  padding: 12px;
   border: none;
-  border: 1px solid #ccc;
-  float: left;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const Select = styled.select`
   max-width: 100%;
-  padding: var(--padding-small);
+  padding: 12px;
   border: none;
-  border: 1px solid #ccc;
-  float: left;
-  // IOS feature UI for select
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Remove default arrow icon */
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add custom arrow icon */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0px center;
 `;
 
 const Option = styled.option``;
@@ -278,15 +305,13 @@ function Form() {
       >
         <FormTitle>Let&rsquo;s Team Up</FormTitle>
         <br />
-        <FormSubTitle>for success in the real estate market</FormSubTitle>
+        <FormSubTitle>for success in the real estate market,</FormSubTitle>
 
         <FormGroup>
           <br />
-          <br />
           <FormSubTitle>just start the conversation below</FormSubTitle>
           <Icon src="/icons/downarrow.png"></Icon>
-          <br />
-          <br />
+          <hr />
           <FormRow>
             <Label htmlFor="name">
               First and Last Name<Asterik>*</Asterik>
@@ -382,6 +407,7 @@ function Form() {
           </FormRow>
         </FormButton>
       </StyledForm>
+      <hr />
     </>
   );
 }
