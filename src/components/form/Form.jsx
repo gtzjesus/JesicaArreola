@@ -11,6 +11,7 @@
 
 // import { useState } from 'react';
 import styled from 'styled-components';
+import Button from '../../ui/buttons/Button';
 
 // ------------------------------
 // Styled Componenets
@@ -403,9 +404,7 @@ function Form() {
         </FormGroup>
         <FormButton>
           <FormRow>
-            {/* <Button type="submit" onClick={handleSubmit}>
-                Submit Message
-              </Button> */}
+            <Button type="submit">Submit</Button>
           </FormRow>
         </FormButton>
       </StyledForm>
