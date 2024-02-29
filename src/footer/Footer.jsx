@@ -18,7 +18,7 @@ function Footer() {
   return (
     <StyledFooter>
       <Copyright href="https://www.worldhello.us" target="_blank">
-        &copy; {new Date().getFullYear()} WorldHello
+        &copy; WorldHello
       </Copyright>
     </StyledFooter>
   );
