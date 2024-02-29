@@ -6,6 +6,7 @@ import Work from '../../components/work/Work';
 import Navigation from '../../navigation/Navigation';
 import Banner from '../../ui/banners/Banner';
 import Form from '../../components/form/Form';
+import Footer from '../../footer/Footer';
 
 /* Media query for larger devices */
 
@@ -36,6 +37,7 @@ function Home() {
       <Houses />
       <ResponsiveContainer>
         <Form />
+        <Footer />
       </ResponsiveContainer>
     </>
   );
