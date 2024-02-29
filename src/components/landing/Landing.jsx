@@ -35,19 +35,19 @@ const Scroll = styled.div`
 `;
 
 const SubTitle = styled.span`
-  padding-left: var(--padding-small);
+  padding-right: var(--padding-small);
 `;
 
 const Hint = styled.div`
   display: flex;
-  padding-right: var(--padding-small);
+  padding-left: var(--padding-small);
 `;
 
 const Element = styled.div``;
 
 const Icon = styled.img`
   height: var(--logo-height);
-  padding-right: var(--padding-xxsmall);
+  padding-left: var(--padding-xxsmall);
 `;
 
 const Realtor = styled.div`
@@ -71,13 +71,13 @@ function Landing() {
       <Title>Realtor</Title>
       <br />
       <Scroll>
-        <SubTitle>(Texas, United States)</SubTitle>
         <Hint>
           <Element>Millennium 2000</Element>
           <Element>
             <Icon src="/icons/realestate.png"></Icon>
           </Element>
         </Hint>
+        <SubTitle>(Texas, United States)</SubTitle>
       </Scroll>
       <Realtor></Realtor>
     </StyledLanding>

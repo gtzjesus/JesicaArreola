@@ -24,7 +24,7 @@ const StyledHouse = styled.div`
 const Video = styled.video`
   // Code logic to style video (mp4)
   width: 100%;
-  height: 75vh;
+  height: 70vh;
 `;
 
 const Details = styled.div`
@@ -32,7 +32,7 @@ const Details = styled.div`
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
-  padding: var(--padding-medium) var(--padding-medium) 0 var(--padding-medium);
+  padding: var(--padding-xxxsmall) var(--padding-medium) 0 var(--padding-medium);
 `;
 
 const Address = styled.span`
@@ -41,6 +41,12 @@ const Address = styled.span`
 
 const Price = styled.span`
   font-size: var(--font-small);
+`;
+
+const Additional = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-medium);
 `;
 
 const Beds = styled.span`
@@ -85,9 +91,11 @@ function House({ house }) {
       <Details>
         <Address>{Home.address}</Address>
         <Price>${Home.price}</Price>
-        <Beds>{Home.beds} beds</Beds>
-        <Baths>{Home.baths} baths</Baths>
-        <Sqft>{Home.sqft} sqft</Sqft>
+        <Additional>
+          <Beds>{Home.beds} beds</Beds>
+          <Baths>{Home.baths} baths</Baths>
+          <Sqft>{Home.sqft} sqft</Sqft>
+        </Additional>
       </Details>
     </StyledHouse>
   );
