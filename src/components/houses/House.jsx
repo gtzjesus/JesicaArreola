@@ -33,6 +33,7 @@ const Details = styled.div`
   margin: 0 auto;
   text-align: center;
   padding: var(--padding-xxxsmall) var(--padding-medium) 0 var(--padding-medium);
+  gap: var(--gap-medium);
 `;
 
 const Address = styled.span`
@@ -40,7 +41,7 @@ const Address = styled.span`
 `;
 
 const Price = styled.span`
-  font-size: var(--font-small);
+  font-size: var(--font-price);
 `;
 
 const Additional = styled.div`
@@ -90,7 +91,7 @@ function House({ house }) {
       </Video>
       <Details>
         <Address>{Home.address}</Address>
-        <Price>${Home.price}</Price>
+        <Price>${Home.price.toLocaleString()}</Price>
         <Additional>
           <Beds>{Home.beds} beds</Beds>
           <Baths>{Home.baths} baths</Baths>
