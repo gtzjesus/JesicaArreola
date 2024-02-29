@@ -408,6 +408,7 @@ function Form() {
           </FormRow>
         </FormButton>
       </StyledForm>
+      <br />
       <hr />
     </>
   );

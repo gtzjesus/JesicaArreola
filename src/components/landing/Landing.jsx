@@ -73,9 +73,9 @@ function Landing() {
       <Scroll>
         <SubTitle>(Texas, United States)</SubTitle>
         <Hint>
-          <Element>Scroll Down</Element>
+          <Element>Millennium 2000</Element>
           <Element>
-            <Icon src="/icons/downarrow.png"></Icon>
+            <Icon src="/icons/realestate.png"></Icon>
           </Element>
         </Hint>
       </Scroll>
