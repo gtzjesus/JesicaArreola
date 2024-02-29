@@ -33,7 +33,7 @@ const Details = styled.div`
   margin: 0 auto;
   text-align: center;
   padding: var(--padding-xxxsmall) var(--padding-medium) 0 var(--padding-medium);
-  gap: var(--gap-medium);
+  gap: var(--gap-small);
 `;
 
 const Address = styled.span`
@@ -95,7 +95,7 @@ function House({ house }) {
         <Additional>
           <Beds>{Home.beds} beds</Beds>
           <Baths>{Home.baths} baths</Baths>
-          <Sqft>{Home.sqft} sqft</Sqft>
+          <Sqft>{Home.sqft.toLocaleString()} sqft</Sqft>
         </Additional>
       </Details>
     </StyledHouse>

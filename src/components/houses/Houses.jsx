@@ -28,11 +28,11 @@ const HousesDots = styled.div`
 const HousesDot = styled.div`
   // Code logic for displaying single dot
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   cursor: pointer;
-  margin: 15px 7px 0px;
+  margin: 10px 10px 0px;
   background-color: var(--color-black);
 `;
 
