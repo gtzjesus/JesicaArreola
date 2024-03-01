@@ -29,16 +29,16 @@ function Home() {
       <Navigation />
       <ResponsiveContainer>
         <Landing />
-        <About />
+        <About id="about" />
         <Work />
         <BannerContainer>
           <Banner />
         </BannerContainer>
       </ResponsiveContainer>
-      <Houses />
+      <Houses id="houses" />
       <ResponsiveContainer>
-        <Millennium />
-        <Form />
+        <Millennium id="millennium" />
+        <Form id="contact" />
         <Footer />
       </ResponsiveContainer>
     </>

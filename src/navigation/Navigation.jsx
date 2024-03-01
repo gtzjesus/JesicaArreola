@@ -10,7 +10,7 @@
 // This section has all necessary imports for this component.
 
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // ------------------------------
 // Styled Componenets
@@ -101,6 +101,33 @@ function Navigation() {
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
+
+  // Close the menu completely when menu item is clicked
+  useEffect(() => {
+    function handleClick() {
+      setIsMenuOpen(false);
+    }
+
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach((item) => {
+      item.addEventListener('click', handleClick);
+    });
+
+    return () => {
+      // Cleanup the event listeners
+      menuItems.forEach((item) => {
+        item.removeEventListener('click', handleClick);
+      });
+    };
+  });
+
+  function scrollToElement(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   return (
     <>
       {/* <!-- Nav Container , the header --> */}
@@ -121,9 +148,30 @@ function Navigation() {
       </StyledNav>
       <MenuContainer isOpen={isMenuOpen}>
         <MenuContent>
-          <MenuItem href="#">Contact</MenuItem>
-
-          {/* Add more menu items as needed */}
+          <MenuItem
+            className="menu-item"
+            onClick={() => scrollToElement('about')}
+          >
+            About
+          </MenuItem>
+          <MenuItem
+            className="menu-item"
+            onClick={() => scrollToElement('houses')}
+          >
+            Houses
+          </MenuItem>
+          <MenuItem
+            className="menu-item"
+            onClick={() => scrollToElement('millennium')}
+          >
+            Millennium
+          </MenuItem>
+          <MenuItem
+            className="menu-item"
+            onClick={() => scrollToElement('contact')}
+          >
+            Contact
+          </MenuItem>
         </MenuContent>
       </MenuContainer>
     </>
