@@ -9,6 +9,7 @@
 // ------------------------------
 // This section has all necessary imports for this component.
 import styled from 'styled-components';
+import Button from '../../ui/buttons/Button';
 
 // ------------------------------
 // Styled Components
@@ -23,8 +24,20 @@ const StyledMillennium = styled.div`
   // COVER THE FULL SCREEN OF EVERY DEVICE
 `;
 
+const MillenniumDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-large);
+  background-color: var(--color-black);
+`;
+
 const Title = styled.span`
   font-size: var(--font-medium);
+  background-color: var(--color-black);
+`;
+
+const SubTitle = styled.span`
+  font-size: var(--font-small);
   background-color: var(--color-black);
 `;
 
@@ -35,15 +48,20 @@ const Title = styled.span`
 function Millennium() {
   return (
     <StyledMillennium>
-      <Title>Millennium is deeply involved with the El Paso community.</Title>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <MillenniumDetails>
+        <Title>
+          Millennium 2000 is deeply involved with the El Paso community.
+        </Title>
 
-      <Title>Millennium is deeply involved with the El Paso community.</Title>
+        <SubTitle>
+          A respected and trustworthy real estate company in El Paso.
+        </SubTitle>
+        <Button>
+          <a href="https://m2krealty.org" target="_blank" rel="noreferrer">
+            Visit Millennium 2000
+          </a>
+        </Button>
+      </MillenniumDetails>
     </StyledMillennium>
   );
 }
