@@ -7,6 +7,7 @@ import Navigation from '../../navigation/Navigation';
 import Banner from '../../ui/banners/Banner';
 import Form from '../../components/form/Form';
 import Footer from '../../footer/Footer';
+import Millennium from '../../components/millennium/Millennium';
 
 /* Media query for larger devices */
 
@@ -36,6 +37,7 @@ function Home() {
       </ResponsiveContainer>
       <Houses />
       <ResponsiveContainer>
+        <Millennium />
         <Form />
         <Footer />
       </ResponsiveContainer>
