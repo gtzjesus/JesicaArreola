@@ -27,18 +27,23 @@ const StyledMillennium = styled.div`
 const MillenniumDetails = styled.div`
   display: flex;
   flex-direction: column;
-  gap: var(--gap-large);
-  background-color: var(--color-black);
+  gap: var(--gap-xlarge);
+  background-color: transparent;
+  text-align: center;
 `;
 
 const Title = styled.span`
   font-size: var(--font-medium);
-  background-color: var(--color-black);
+  background-color: transparent;
 `;
 
 const SubTitle = styled.span`
   font-size: var(--font-small);
-  background-color: var(--color-black);
+  background-color: transparent;
+`;
+
+const StyledButton = styled.a`
+  background-color: transparent;
 `;
 
 // ------------------------------
@@ -53,14 +58,14 @@ function Millennium() {
           Millennium 2000 is deeply involved with the El Paso community.
         </Title>
 
-        <SubTitle>
-          A respected and trustworthy real estate company in El Paso.
-        </SubTitle>
-        <Button>
-          <a href="https://m2krealty.org" target="_blank" rel="noreferrer">
-            Visit Millennium 2000
-          </a>
-        </Button>
+        <SubTitle>A respected and trustworthy real estate company.</SubTitle>
+        <StyledButton
+          href="https://m2krealty.org"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button>Visit Millennium 2000</Button>
+        </StyledButton>
       </MillenniumDetails>
     </StyledMillennium>
   );
