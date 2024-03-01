@@ -29,15 +29,15 @@ function Home() {
       <Navigation />
       <ResponsiveContainer>
         <Landing />
-        <About id="about" />
+        <About id="about" /> {/* Render the About component */}
         <Work />
         <BannerContainer>
           <Banner />
         </BannerContainer>
       </ResponsiveContainer>
-      <Houses id="houses" />
+      <Houses id="houses" /> {/* Render the Houses component */}
       <ResponsiveContainer>
-        <Millennium id="millennium" />
+        <Millennium id="millennium" /> {/* Render the Millennium component */}
         <Form id="contact" />
         <Footer />
       </ResponsiveContainer>

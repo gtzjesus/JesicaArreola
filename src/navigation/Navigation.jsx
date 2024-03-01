@@ -94,15 +94,12 @@ const MenuItem = styled.a`
 // This section has our React Component which handles the hook data
 
 function Navigation() {
-  // Check to see if menu is open/close
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Handle toggle for button menu
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  // Close the menu completely when menu item is clicked
   useEffect(() => {
     function handleClick() {
       setIsMenuOpen(false);
@@ -114,19 +111,33 @@ function Navigation() {
     });
 
     return () => {
-      // Cleanup the event listeners
       menuItems.forEach((item) => {
         item.removeEventListener('click', handleClick);
       });
     };
-  });
+  }, []);
 
-  function scrollToElement(id) {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  useEffect(() => {
+    function scrollToHashSection() {
+      const hash = window.location.hash;
+      if (hash) {
+        const sectionId = hash.substring(1);
+        const section = document.getElementById(sectionId);
+        console.log(section);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
-  }
+
+    // Scroll to the section when the component mounts and when the hash changes
+    scrollToHashSection();
+    window.addEventListener('hashchange', scrollToHashSection);
+
+    return () => {
+      window.removeEventListener('hashchange', scrollToHashSection);
+    };
+  }, []);
 
   return (
     <>
@@ -148,28 +159,16 @@ function Navigation() {
       </StyledNav>
       <MenuContainer isOpen={isMenuOpen}>
         <MenuContent>
-          <MenuItem
-            className="menu-item"
-            onClick={() => scrollToElement('about')}
-          >
+          <MenuItem className="menu-item" href="#about">
             About
           </MenuItem>
-          <MenuItem
-            className="menu-item"
-            onClick={() => scrollToElement('houses')}
-          >
+          <MenuItem className="menu-item" href="#houses">
             Houses
           </MenuItem>
-          <MenuItem
-            className="menu-item"
-            onClick={() => scrollToElement('millennium')}
-          >
+          <MenuItem className="menu-item" href="#houses">
             Millennium
           </MenuItem>
-          <MenuItem
-            className="menu-item"
-            onClick={() => scrollToElement('contact')}
-          >
+          <MenuItem className="menu-item" href="#houses">
             Contact
           </MenuItem>
         </MenuContent>
