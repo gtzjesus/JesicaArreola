@@ -18,9 +18,14 @@ const StyledMillennium = styled.div`
   background-image: url('backgrounds/millennium.jpg');
   background-size: cover;
   color: var(--color-white);
+  padding: var(--padding-xxlarge) var(--padding-medium);
 
   // COVER THE FULL SCREEN OF EVERY DEVICE
-  min-height: 100vh;
+`;
+
+const Title = styled.span`
+  font-size: var(--font-medium);
+  background-color: var(--color-black);
 `;
 
 // ------------------------------
@@ -28,7 +33,19 @@ const StyledMillennium = styled.div`
 // ------------------------------
 // This section has our React Component which handles the hook data
 function Millennium() {
-  return <StyledMillennium></StyledMillennium>;
+  return (
+    <StyledMillennium>
+      <Title>Millennium is deeply involved with the El Paso community.</Title>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <Title>Millennium is deeply involved with the El Paso community.</Title>
+    </StyledMillennium>
+  );
 }
 
 export default Millennium;
