@@ -21,7 +21,6 @@ const StyledMillennium = styled.div`
 
   // COVER THE FULL SCREEN OF EVERY DEVICE
   min-height: 100vh;
-  min-width: 100vw;
 `;
 
 // ------------------------------
