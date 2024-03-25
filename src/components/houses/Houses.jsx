@@ -1,7 +1,20 @@
+// ------------------------------
+// File: Houses.jsx
+// ------------------------------
+// Description: React component for calling House.jsx to display individual houses.
+// ------------------------------
+
+// ------------------------------
+// Imports
+// ------------------------------
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import House from './House';
 
+// ------------------------------
+// Styled Componenets
+// ------------------------------
+// This section has all CSS styles configured for every HTML element.
 const StyledHouses = styled.div`
   color: var(--color-black);
   overflow-x: hidden;

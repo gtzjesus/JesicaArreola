@@ -20,8 +20,6 @@ const StyledMillennium = styled.div`
   background-size: cover;
   color: var(--color-white);
   padding: var(--padding-xxlarge) var(--padding-medium);
-
-  // COVER THE FULL SCREEN OF EVERY DEVICE
 `;
 
 const MillenniumDetails = styled.div`
