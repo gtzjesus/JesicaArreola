@@ -306,14 +306,14 @@ function Form() {
         action="https://worldhello-backend-fd375c76bbd5.herokuapp.com/api/sendEmail"
         method="POST"
       >
-        <FormTitle>Let&rsquo;s Team Up</FormTitle>
-        <br />
-        <FormSubTitle>for success in the real estate market,</FormSubTitle>
+        <FormTitle>Let&rsquo;s get in touch</FormTitle>
 
         <FormGroup>
           <br />
-          <FormSubTitle>just start the conversation below</FormSubTitle>
-          <Icon src="/icons/downarrow.png"></Icon>
+          <FormSubTitle>
+            just fill the form below <Icon src="/icons/downarrow.png"></Icon>
+          </FormSubTitle>
+
           <hr />
           <FormRow>
             <Label htmlFor="name">

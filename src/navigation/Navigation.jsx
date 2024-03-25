@@ -11,6 +11,7 @@
 
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
 // ------------------------------
 // Styled Componenets
@@ -35,7 +36,7 @@ const Object = styled.div`
   padding: 0 var(--padding-small);
 `;
 
-const Link = styled.a``;
+const Icon = styled.a``;
 
 const Logo = styled.img`
   height: var(--font-small);
@@ -55,6 +56,7 @@ const Menu = styled.button`
   border-radius: 20px; /* Adjust the value to control the roundness of the button */
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 `;
 
 const MenuContainer = styled.div`
@@ -80,12 +82,12 @@ const MenuContent = styled.div`
 const MenuItem = styled.a`
   display: inline-block;
   padding: 8px 16px;
-  background-color: black;
-  color: white;
+  color: var(--color-black);
   border-radius: 20px;
   text-align: center;
   text-decoration: none;
   margin: 8px;
+  cursor: pointer;
 `;
 
 // ------------------------------
@@ -144,13 +146,13 @@ function Navigation() {
       {/* <!-- Nav Container , the header --> */}
       <StyledNav>
         <Object>
-          <Link target="_blank" href="https://www.instagram.com/jesicaarlette/">
+          <Icon target="_blank" href="https://www.instagram.com/jesicaarlette/">
             {/* <!--  Container for logo and title --> */}
             <Logo src="/icons/instagram.png" alt="instagram"></Logo>
-          </Link>
-          <Link target="_blank" href="https://www.facebook.com/iarlette">
+          </Icon>
+          <Icon target="_blank" href="https://www.facebook.com/iarlette">
             <Logo src="/icons/facebook.png" alt="facebook"></Logo>
-          </Link>
+          </Icon>
         </Object>
         <Object>
           {/* <!-- Menu Container for links --> */}
@@ -159,17 +161,30 @@ function Navigation() {
       </StyledNav>
       <MenuContainer isOpen={isMenuOpen}>
         <MenuContent>
-          <MenuItem className="menu-item" href="#about">
-            About
+          <MenuItem className="menu-item">
+            <Link
+              to="houses-section"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Houses
+            </Link>
           </MenuItem>
-          <MenuItem className="menu-item" href="#houses">
-            Houses
-          </MenuItem>
-          <MenuItem className="menu-item" href="#houses">
-            Millennium
-          </MenuItem>
-          <MenuItem className="menu-item" href="#houses">
-            Contact
+
+          <MenuItem className="menu-item">
+            <Link
+              to="contact-section"
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Contact
+            </Link>
           </MenuItem>
         </MenuContent>
       </MenuContainer>

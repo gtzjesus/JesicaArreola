@@ -29,16 +29,18 @@ function Home() {
       <Navigation />
       <ResponsiveContainer>
         <Landing />
-        <About id="about" /> {/* Render the About component */}
+        <About />
         <Work />
-        <BannerContainer>
-          <Banner />
-        </BannerContainer>
       </ResponsiveContainer>
-      <Houses id="houses" /> {/* Render the Houses component */}
+      <BannerContainer id="houses-section">
+        <Banner />
+      </BannerContainer>
+      <Houses />
       <ResponsiveContainer>
-        <Millennium id="millennium" /> {/* Render the Millennium component */}
-        <Form id="contact" />
+        <Millennium />
+      </ResponsiveContainer>
+      <ResponsiveContainer id="contact-section">
+        <Form />
         <Footer />
       </ResponsiveContainer>
     </>
