@@ -31,10 +31,11 @@ function Home() {
         <Landing />
         <About />
         <Work />
+
+        <BannerContainer id="houses-section">
+          <Banner />
+        </BannerContainer>
       </ResponsiveContainer>
-      <BannerContainer id="houses-section">
-        <Banner />
-      </BannerContainer>
       <Houses />
       <ResponsiveContainer>
         <Millennium />
