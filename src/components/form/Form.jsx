@@ -315,9 +315,8 @@ function Form() {
           <StyledForm>
             <DeliveryContainer>
               <Img src="/icons/email-sent.png"></Img>
-              <Delivered>
-                Email sent! I will reach out to you shortly.
-              </Delivered>
+              <Delivered>Email sent!</Delivered>
+              <Delivered>I will reach out to you shortly.</Delivered>
               <DeliveredSmall>
                 I look forward to create a successful partnership.
               </DeliveredSmall>
@@ -336,7 +335,7 @@ function Form() {
             <FormGroup>
               <br />
               <FormSubTitle>
-                just fill the form below{' '}
+                just fill the form below
                 <Icon src="/icons/downarrow.png"></Icon>
               </FormSubTitle>
 
