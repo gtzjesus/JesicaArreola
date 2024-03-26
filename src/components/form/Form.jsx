@@ -158,11 +158,13 @@ const Img = styled.img`
 
 const Delivered = styled.span`
   font-size: var(--font-xsmall);
+  margin: 0 auto;
 `;
 
 const DeliveredSmall = styled.span`
   font-size: var(--font-form);
   padding: var(--padding-small);
+  margin: 0 auto;
 `;
 
 const ErrorMessage = styled.div`
@@ -314,11 +316,10 @@ function Form() {
             <DeliveryContainer>
               <Img src="/icons/email-sent.png"></Img>
               <Delivered>
-                Email sent successfully! <br />
-                We will reach out to you shortly.
+                Email sent! I will reach out to you shortly.
               </Delivered>
               <DeliveredSmall>
-                We look forward to create a successful partnership.
+                I look forward to create a successful partnership.
               </DeliveredSmall>
             </DeliveryContainer>
           </StyledForm>
