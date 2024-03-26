@@ -11,7 +11,7 @@ const Spinner = styled.div`
   width: 6.4rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(farthest-side, #0000 94%, #0000) top/10px 10px
+  background: radial-gradient(farthest-side, #2a343c 94%, #0000) top/10px 10px
       no-repeat,
     conic-gradient(#0000 30%, #ffc147);
   -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
